@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/calendar_screen.dart';
 import 'package:flutter_application_2/login_screen.dart';
+import 'package:flutter_application_2/signup_screen.dart';
 import 'package:persistent_bottom_nav_bar/persistent_tab_view.dart';
 
 void main() {
@@ -10,16 +11,17 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  final bool loggedIn = true;
+  final bool loggedIn = false;
 
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         title: 'Flutter Demo',
-        initialRoute: (loggedIn) ? '/mainapp' : '/login',
+        initialRoute: (loggedIn) ? '/mainapp' : '/signup',
         routes: {
           '/login': (context) => LoginScreen(),
+          '/signup': (context) => SignUpScreen(),
           '/mainapp': (context) => HomeScreen(),
         });
   }
